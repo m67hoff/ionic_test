@@ -5,10 +5,12 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-
+ 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+ 
+    <h3>Apple: {{apple}}</h3>
+    <h3>Banana: {{banana | async}}</h3>
+ 
+    <button ion-button (click)="setInStorage()">Set Data</button>
+ 
 </ion-content>
