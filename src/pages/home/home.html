@@ -4,11 +4,14 @@
       Ionic Blank
     </ion-title>
   </ion-navbar>
-</ion-header>
+  <ion-toolbar>
+    <form [formGroup]="searchForm" (ngSubmit)="formSubmit()">
+        <ion-searchbar formControlName="term"></ion-searchbar>
 
+    </form>
+  </ion-toolbar>
+</ion-header>
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <music-item navPush="DetailPage" *ngFor="let track of tracks" [navParams]="{'track': track}" [track]="track"></music-item>
+  <button ion-button block logEvnt>Tap me and check the console</button>
 </ion-content>
