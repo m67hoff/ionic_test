@@ -1,8 +1,12 @@
 import { FormControl } from '@angular/forms'
 
+interface ValidationResult {
+ [key:string]:boolean;
+}
+
 export class UsernameValidator {
 
-    static checkUsername(control: FormControl): any {
+    static checkUsername(control: FormControl): Promise<ValidationResult> {
 
         return new Promise(resolve => {
 
