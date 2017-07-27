@@ -22,9 +22,9 @@ app.get('/auth/validate-username/:username', function(req, res) {
     console.log('body: ' + JSON.stringify(req.body))
 
     if (req.params.username == "greg")
-        res.status(401).send('{"ok": false}')
+        res.sendStatus(401)
     else
-        res.status(200).send('{"ok": true}')
+        res.sendStatus(200)
 });
 
 var port = 4567;

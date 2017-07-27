@@ -25,15 +25,14 @@ export class UsernameValidatorRemote {
 
             this.debouncer = setTimeout(() => {
 
-                this.authProvider.validateUsername(control.value).subscribe((res) => {
-                    console.log(res)
-                    if (res.ok) {
+                this.authProvider.validateUsername(control.value).subscribe(
+                    (res) => {
+                        console.log(res)
                         resolve(null);
-                    }
-                }, (err) => {
-                    console.log(err)
-                    resolve({ 'username taken': true });
-                });
+                    }, (err) => {
+                        console.log(err)
+                        resolve({ 'username taken': true });
+                    });
 
             }, 1000);
 

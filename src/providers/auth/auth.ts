@@ -13,7 +13,7 @@ export class AuthProvider {
     // const SERVER_ADDRESS = "https://red-mh.mybluemix.net"
     const SERVER_ADDRESS = "http://localhost:4567"
     
-    return this.http.get(SERVER_ADDRESS + '/auth/validate-username/' + username).map(res => res.json());
+    return this.http.get(SERVER_ADDRESS + '/auth/validate-username/' + username)
   }
 
 }
