@@ -22,10 +22,19 @@ export class HomePage {
 
     this.slideOneForm = formBuilder.group({
       firstName: ['',
-        Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])
+        Validators.compose([
+          Validators.minLength(3),
+          Validators.maxLength(30),
+          Validators.pattern('[a-zA-Z ]*'),
+          Validators.required
+        ])
       ],
       lastName: ['',
-        Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])
+        Validators.compose([
+          Validators.maxLength(30),
+          Validators.pattern('[a-zA-Z ]*'),
+          Validators.required
+        ])
       ],
       age: ['',
         AgeValidator.isValid
@@ -34,7 +43,10 @@ export class HomePage {
 
     this.slideTwoForm = formBuilder.group({
       username: ['',
-        Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*')]),
+        Validators.compose([
+          Validators.required,
+          Validators.pattern('[a-zA-Z]*')
+        ]),
         UsernameValidator.checkUsername
       ],
       privacy: ['',
