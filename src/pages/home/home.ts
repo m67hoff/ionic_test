@@ -4,6 +4,7 @@ import { NavController } from 'ionic-angular';
 
 import { AgeValidator } from '../../validators/age';
 import { UsernameValidator } from '../../validators/username';
+import { UsernameValidatorRemote } from "../../validators/usernameRemote";
 
 @Component({
   selector: 'page-home',
@@ -18,7 +19,7 @@ export class HomePage {
 
   submitAttempt: boolean = false;
 
-  constructor(public navCtrl: NavController, public formBuilder: FormBuilder) {
+  constructor(public navCtrl: NavController, public formBuilder: FormBuilder, public usernameValidatorRemote: UsernameValidatorRemote) {
 
     this.slideOneForm = formBuilder.group({
       firstName: ['',
@@ -45,9 +46,12 @@ export class HomePage {
       username: ['',
         Validators.compose([
           Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(30),
           Validators.pattern('[a-zA-Z]*')
         ]),
-        UsernameValidator.checkUsernameAsync
+        // UsernameValidator.checkUsernameAsync
+        usernameValidatorRemote.checkUsernameAsync.bind(usernameValidatorRemote)
       ],
       privacy: ['',
         Validators.required
