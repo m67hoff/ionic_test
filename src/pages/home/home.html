@@ -91,6 +91,9 @@
 
                     <ion-item *ngIf="!slideTwoForm.controls.username.valid && !slideTwoForm.controls.username.pending && (slideTwoForm.controls.username.dirty || submitAttempt)">
                         <p>Sorry, that username can not be used!</p>
+                        <p *ngIf="slideTwoForm.controls.username.hasError('username taken')">
+                            Username is already taken!
+                        </p>
                     </ion-item>
 
                     <ion-item>

@@ -6,7 +6,7 @@ interface ValidationResult {
 
 export class UsernameValidator {
 
-    static checkUsername(control: FormControl): Promise<ValidationResult> {
+    static checkUsernameAsync(control: FormControl): Promise<ValidationResult> {
 
         return new Promise(resolve => {
 
@@ -17,7 +17,7 @@ export class UsernameValidator {
                 } else {
                     resolve(null)
                 }
-            }, 2000)
+            }, 2500)
 
         })
     }

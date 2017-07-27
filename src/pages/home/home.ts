@@ -47,7 +47,7 @@ export class HomePage {
           Validators.required,
           Validators.pattern('[a-zA-Z]*')
         ]),
-        UsernameValidator.checkUsername
+        UsernameValidator.checkUsernameAsync
       ],
       privacy: ['',
         Validators.required
