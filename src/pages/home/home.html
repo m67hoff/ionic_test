@@ -5,12 +5,36 @@
     </ion-title>
     <ion-buttons end>
       <button ion-button (click)="addMarker()"><ion-icon name="add"></ion-icon> Add Marker</button>
-    </ion-buttons>  
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content >
-  
+<ion-content>
+
+    <ion-card>
+
+      <ion-card-header>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-11="">
+              Turn-by-Turn Directions
+            </ion-col>
+
+            <ion-col col-1="">
+              <ion-icon name="md-list" (click)="listExpand()"></ion-icon>
+            </ion-col>
+
+          </ion-row>
+        </ion-grid>
+      </ion-card-header>
+
+      <ion-card-content>
+        <div #directionsPanel id="directionsPanel"></div>
+      </ion-card-content>
+
+    </ion-card>
+
+
   <div #map id="map">
   </div>
 

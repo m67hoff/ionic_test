@@ -8,5 +8,12 @@ page-home {
         width: 100%;
         height: 100%;
     }
-
+    
+    #ion-directionsPanel {
+            max-height: 200px;
+            overflow: scroll;
+            position: absolute;
+            z-index: 1;
+        }
+     
 }
